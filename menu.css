@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+*{  
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: black;
+    padding-top: 5px;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+nav li a:hover {
+    background-color: red;
+}
+
+.dropdown-menu {
+    position: absolute;
+    box-shadow: 0 0 2px black;
+    display: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: white;
+    background-color: gray;
+    font-size: 0.9em;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}

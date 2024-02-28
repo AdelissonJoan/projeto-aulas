@@ -189,10 +189,148 @@
             </code>
             </p>
 
+            <p>Lembrando também que assim como nos arquivos de imagens o tamanho do seu áudio e vídeo também importa para o seu site, então utilizar arquivos de áudio muito
+            grandes pode deixar o seu site muito pesado. Outra forma também além do YouTube é você utilizar arquivos que foram disponibilizados pelo autor.</p>
 
+            <p>Então, para adicionarmos áudios em nosso site podemos fazer de duas formas, a primeira utilizando a tag "audio".</p>
+
+            <p>
+            <code>
+            Exe: &lt;audio src"nome do arquivo de áuido.mp3" controls autoplay&gt;
+            </code>
+            </p>
+
+            <p>Bem parecido com a tag &lt;img&gt; o "src" é onde vc vai colocar a fonte do arquivo, o "controls" irá exibir no navegador o ícone do áudio (play/pause) e o "autoplay" irá tocar o áudio automaticamente, lembrando que isso não funciona em todos os navegadores.
+            Os formatos de áudio mais compativeis com os navegadores são: MP3, WAV, OGG.</p>
+
+            <p>A segunda forma é criando uma tag áudio mas apagando o parâmetro padrão dela e criando o padrão "source:src", depois criar várias sources dentro dela, parecido um pouco com o formato de uma lista. Segue o exemplo abaixo:
+            </p>
+
+            <p>
+            <code>
+            <pre>
+            &lt;audio&gt;
+                &lt;source src="nome do arquivo.mp3" type="audio/mpeg"&gt;
+                &lt;source src="nome do arquivo.ogg" type="audio/ogg"&gt;
+                &lt;source src="nome do arquivo.wav" type="audio/wav"&gt;
+            &lt;/audio&gt;   
+            </pre>
+            </code>
+            </p>
+
+            <p>Esse método acima irá funcionar como o de carregar imagens de diferentes tamanhos, nesse caso o navegador irá carregar de cima pra baixo um entre esses arquivos que seja compatível com ele.
+            E se acaso o navegador não conseguir carregar e reproduzir nenhum deles você pode criar um paragráfo com o arquivo para download.</p>
+
+            <p>Obs. tente evitar ao máximo utilizar os arquivo em formato ".wav" pois eles são muito pesados.</p>
+        </article>
+        <article>
+            <h2>Explicando funcões de alguns parâmetros de áudio:
+            </h2>
+
+            <p>preload="auto" irá carregar todo o áudio, e dependendo do tamanho do arquivo isso pode deixar o seu site muito pesado. (opção padrão do preload)</p>
+            
+            <p>preload="metadata" irá carregar apenas o nome do arquivo de áudio e algumas informações dele.</p>
+
+            <p>preload="none" não irá carregar nada, apenas quando o usuário der play no arquivo.</p>
+
+            <p>O parâmetro "controls" irá carregar e mostrar as informações do arquivo como: duração, play e pause, etc.. </p>
+            
+            <p>O parâmetro "autoplay" irá carregar o arquivo e reproduzir ele automaticamente (o autoplay só irá funcionar com o preload em auto), lembrando que nem sempre ele é reconhecido pelo navegador.</p>
+
+            <p>O parâmetro "loop" irá reproduzir e repetir o arquivo automaticamente assim que ele acabar.</p>
+        </article>
+        <article>
+            <h2>Formatos de vídeos para o seu site:</h2>
+
+            <p>Primeiro passo antes de tudo vamos baixar o nosso arquivo de video, e para isso vamos utilizar um site de antes chamado "<a href="https://www.pexels.com/pt-br/" target="_blank" rel="external">pexels</a>" lá vamos escolher nosso arquivo e fazer o download, depois disso vamos fazer o download de uma outra ferramenta para conversão de vídeos chamada "<strong>HandBrake</strong>", pois assim como as imagens e áudios um vídeo muito longo e com uma qualidade muito grande irá deixar o seu site muito lento.</p>
+
+            <p>Após baixarmos a ferramenta vamos seguir o passo a passo para fazer a nossa conversão. Com o HandBrake aberto vamos selecionar o nosso arquivo, depois na aba perfil vamos selecionar a qualidade que desejamos converter e depois vamos em iniciar conversão, após isso aguardamos o processo e seu arquivo estará pronto para uso.</p>
+
+            <p>Geralmente os padrões de videos mais utilizados e suportados pelos navegadores são: .MP4 .M4V .WEBM .OGV</p>
+        </article>
+        <article>
+            <h2>Inserindo vídeos no seu site:</h2>
+
+            <h3>Vídeos em hospedagem própria:</h3>
+
+            <p>Utilizando os arquivos de vídeos que baixamos antes vamos criar as nossa pastas do exercicío 012 > midias > imagens, dentro da pasta midias vamos colocar os nossos
+            vídeos e da pasta imagens vamos colocar uma thumbnail que vai ser usada no nosso vídeo. Após isso vamos criar o nosso arquivo HTML dentro da pasta do exercício, vamos
+            criar o arquivo base e depois colocarmos a tag para adicionarmos o nosso vídeo.</p>
+
+            <p>A tag &lt;vídeo&gt; é utlizada para adicionar arquivos de vídeo ao nosso site, por padrão ela vem com o parâmetro src="" (para colocarmos a nossa fonte do arquivo) mas além do src podemos adicionar mais alguns outros parâmetros como por exemplo o width="" (irá adaptar o tamanho do vídeo com o seu site) e o controls 
+            (irá exibir os controles de vídeo como: play/pause, duração).</p> 
+            
+            <p>Lembrando que o "width" não diminui o tamanho do nosso arquivo, ele apenas ajusta ele (assim como aquelas imagens dinâmicas) para que ele apareça corretamente no nosso navegador.</p>
+
+            <p>Esse método acima é uma das formas de adicionar vídeos ao seu site, a segunda forma é a seguinte:</p>
+
+            <p>Você irá criar a tag &lt;video&gt; depois apagar o seu parâmetro padrão (src="") e dentro dessa tag criar várias sources, assim como você fez nos seus arquivos de áudio anteriormente. e ela funcionará exatamente assim, Exe:</p>
+
+            <p>
+            <code>
+            <pre>
+            &lt;video width="500" poster="imagens/limoes-capa.png" controls&gt;
+                &lt;source src="midia/meu-video.mp4" type="video/mp4"&gt;
+                &lt;source src="midia/meu-video.m4v" type="video/mp4"&gt;
+                &lt;source src="midia/meu-video.webm" type="video/webm"&gt;
+                &lt;source src="midia/meu-video.ogv" type="video/ogg"&gt;
+            &lt;/video&gt;
+            </pre>
+            </code>
+            </p>
+
+            <p>Assim como no exercício de áudio você também pode ainda adicionar um paragráfo dizendo que o seu navegador não foi compatível com a reprodução do arquivo.</p>
+
+            <p>Obs: Esse método acima irá fazer com que o seu site fique bastante pesado dependendo do número de acessos diários nele, o que ocasionará em um valor altissimo 
+            para o seu cliente que está pagando pelo serviço de hospedagem que mantêm esse site ativo.</p>
+
+            <h3>Explicando os parâmetros do exemplo acima:</h3>
+
+            <p>O width="" (irá adaptar o arquivo a largura que você colocar dentro dele, para que o arquivo apareça corretamente).</p>
+            <p>O weight="" (irá adaptar o arquivo a altura que você colocar dentro dele).</p>
+            <p>O poster="" (Irá carregar o arquivo de imagem que vai aparecer como thumbnail no seu vídeo).</p>
+            <p>O controls (Irá exibir os controles de vídeo do seu arquivo).</p>
+
+            <h3>Formatos de vídeos mais compatíveis com cada navegador:</h3>
+
+            <ul>
+            <li>Microsoft Edge: .MP4 .M4V</li>
+            <li>Apple Safari: .MP4 .M4V</li>
+            <li>Google Chrome: .MP4 .M4V .WEBM .OGV</li>
+            <li>Mozilla Fiferox: .WEBM .OGV</li>
+            <li>Opera: .WEBM .OGV</li>
+            </ul>
+        </article>
+        <article>
+            <h2>Vídeos em hospedagem externa:</h2>
+
+            <p>Quando colocamos vídeos no nosso próprio servidor, podemos passar por alguns problemas como alto consumo de banda, site lento, e incompatibilidade
+            com alguns navegadores por conta dos codecs. E quanto maior for a quantidade de acessos ao nosso site diariamente resultará em um alto uso de tráfego
+            e consumo da sua franquia de hospedagem, o que ocasionará em um preço muito elevado para vc (ou o seu cliente dono daquele site).</p>
+
+            <p>Então, como podemos resolver isso? Para isso podemos utilizar dois métodos bem simples que vou te mostrar abaixo:</p>
+
+            <h3>Inserindo vídeos do YouTube:</h3>
+
+            <p>Primeiro; você precisa ter uma conta no youtube, segundo; o seu arquivo de vídeo que você quer utilizar deve estar também no youtube para que as pessoas possam
+            ter acesso a ele. Após isso basta você pesquisar sobre o arquivo, ir em compartilhar e depois em "incorporar vídeo", depois disso o youtube vai te gerar um código
+            em HTML (onde você pode alterar a largura e etc..) e basta apenas você copiar e colar no seu arquivo do exercicío. A única desvantagem de carregar arquivos apartir do youtube é que: seus arquivos serão de acesso público para qualquer pessoa, e se for o caso de conteúdo de uma empresa ou algo pessoal isso pode não ser muito vantajoso.</p>
+
+            <h3>Inserindo vídeos do Vimeo:</h3>
+
+            <p>Assim como no yotube você pode também incorporar e carregar vídeos apartir do Vimeo, só que algumas diferênças, por exemplo: no vímeo você tem uma qualidade de vídeo um pouco mais fluída e com melhor qualidade álem de também ter a opção de deixar o seu vídeo de forma privada para que apenas algumas pessoas possam ter acesso.. Mas em contra-partida em alguns navegadores pode ser que o seu vídeo demore um pouco a carregar ou dê umas travadas.</p>
+
+            <p>Esses métodos acima basicamente se constitue em carregar vídeos apartir de serviços de vídeo gratuitos.</p>
+
+            <p>Então basicamente, Vídeos em hospedagem própria irão consumir dados do seu servidor (serviço de hospedagem), o que vai resultar em um alto valor para o seu cliente.
+            E Vídeos em hospedagem externa irá consumir dados do servidor externo onde ele está hospedado. ex: YouTube, Vimeo.</p>
+
+            <p>Lembrando que independente do local onde os seus arquivos de vídeo estiverem hospedados você só deve utiliza-los se forem de sua autoria ou com o consentimento da pessoa responsável pelos direitos daquele conteúdo.</p>
         </article>
         <aside>
+            <h2>Desafio 009:</h2>
 
+            <p>Criar um site que indica 4 vídeos para o usúario e quando ele clicar em um deles será redirecionado a uma outra página onde vai poder assisti-lo e ter acesso também a playlist completa referente a ele, e com um botão com opção de voltar a tela principal.</p>
         </aside>
     </main>
     <footer>
